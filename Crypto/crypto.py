@@ -4,23 +4,6 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.exceptions import InvalidSignature
 from cryptography.hazmat.primitives.asymmetric import ec, padding, rsa
-"""
-COMP4722: Network Security
-Implement the following functions using the Python secrets and cryptography libraries.
-The input and output variables, and expected types are given as comments in each function.
-
-The implementation should thoroughly check for any errors/exceptions that may be generated
-during runtime. The functions should never raise an exception of any type other than the
-CryptoException class defined below. This way we can ensure that we have considered the
-different types of errors/exceptions that can arise in the implementation. Errors can be
-malformed input errors, incorrect key sizes, etc. and exceptions can be ones created by your
-implementation and also from the used libraries.
-
-All random numbers used in your implementation should be generated using your implemented
-generate_random_securely() function
-
-"""
-
 
 class CryptoException(Exception):
     '''
@@ -36,7 +19,6 @@ class CryptoException(Exception):
     pass
 
 
-################# BEGIN TODO
 
 def generate_random_securely(size=None):
     if size is None:
@@ -466,7 +448,6 @@ def verify_signature(data, method, public_key, signature):
     except Exception:
         raise CryptoException("Error verifying signature")
 
-################# END TODO
 
 
 def print_ba(b, prefix=''):
